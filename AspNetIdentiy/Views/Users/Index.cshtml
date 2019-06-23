@@ -1,0 +1,35 @@
+﻿@model List<AppUser>
+@{
+
+}
+
+<div class="alert alert-dark">
+    <a href="https://localhost:44301/users/CreateUser/?name=Reyhane&email=zeinabkalanaki@yahoo.com&password=123456">Create User</a>
+</div>
+<br />
+<table class="table table-bordered">
+    @if (Model != null && Model.Any())
+    {
+        foreach (var user in Model)
+        {
+            <tr>
+                <td>
+                    @user.Id
+                </td>
+                <td>
+                    @user.UserName
+                </td>
+                <td>
+                    @user.Email
+                </td>
+            </tr>
+        }
+
+    }
+    else
+    {
+        <tr>
+            <td>No Data Found</td>
+        </tr>
+    }
+</table>

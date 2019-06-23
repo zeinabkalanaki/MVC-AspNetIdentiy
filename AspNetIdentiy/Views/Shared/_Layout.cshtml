@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link asp-href-include="lib/bootstrap/dist/css/*.min.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div style="padding-top:50px" class="container">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a href="https://localhost:44301/Account/Logout">Logout</a>
+        }
+        else
+        {
+            <a href="https://localhost:44301/Account/Login?username=Reyhane_updated&password=123456">Login</a>
+        }
+        
+        <br />
+        <hr />
+        @RenderBody()
+    </div>
+</body>
+</html>
